@@ -1,7 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://debprahfmmn1a"]
+[gd_scene load_steps=4 format=3 uid="uid://debprahfmmn1a"]
 
 [ext_resource type="PackedScene" uid="uid://xton506cwm8p" path="res://player/player.tscn" id="1_6xmxd"]
+[ext_resource type="PackedScene" uid="uid://b6w7h3e4v3kxc" path="res://key/key.tscn" id="2_tcf2h"]
+[ext_resource type="PackedScene" uid="uid://b1kwevjyrnxmt" path="res://chest/chest.tscn" id="3_4717r"]
 
 [node name="world" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_6xmxd")]
+position = Vector2(108, 83)
+
+[node name="key" parent="." instance=ExtResource("2_tcf2h")]
+position = Vector2(792, 230)
+
+[node name="chest" parent="." instance=ExtResource("3_4717r")]
+position = Vector2(137, 518)
