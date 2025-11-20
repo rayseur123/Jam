@@ -1,21 +1,22 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+const tile_size = 32
+
+var is_moving: bool = false
 
 func _physics_process(delta: float) -> void:
-	_gestion_deplacement()
+	_move()
 	move_and_slide()
 
-func _gestion_deplacement() -> void:
+func _move() -> void:
 	var direction = Vector2.ZERO
 
-	if Input.is_action_pressed("up"):
+	if Input.is_action_just_pressed("up"):
 		direction.y -= 1
-	if Input.is_action_pressed("down"):
+	elif Input.is_action_just_pressed("down"):
 		direction.y += 1
-	if Input.is_action_pressed("right"):
+	elif Input.is_action_just_pressed("right"):
 		direction.x += 1
-	if Input.is_action_pressed("left"):
+	elif Input.is_action_just_pressed("left"):
 		direction.x -= 1
-
-	velocity = direction.normalized() * SPEED
+	global_position += direction.normalized() * tile_size
