@@ -1,20 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://debprahfmmn1a"]
+[gd_scene load_steps=7 format=3 uid="uid://debprahfmmn1a"]
 
 [ext_resource type="PackedScene" uid="uid://xton506cwm8p" path="res://player/player.tscn" id="1_6xmxd"]
-[ext_resource type="PackedScene" uid="uid://b6w7h3e4v3kxc" path="res://key/key.tscn" id="2_tcf2h"]
-[ext_resource type="PackedScene" uid="uid://b1kwevjyrnxmt" path="res://chest/chest.tscn" id="3_4717r"]
-[ext_resource type="PackedScene" uid="uid://c3hm5qf8sqy12" path="res://door/door.tscn" id="4_h5o24"]
+[ext_resource type="Texture2D" uid="uid://bxao7xerwyqm5" path="res://materials/magma.png" id="2_tcf2h"]
+[ext_resource type="PackedScene" uid="uid://c7h8g3xssfopp" path="res://platforme/platforme_basic.tscn" id="3_4717r"]
+[ext_resource type="AudioStream" uid="uid://ccli5ksajycao" path="res://world/musique.mp3" id="4_h5o24"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_4717r"]
+resource_name = "platform"
+scenes/1/scene = ExtResource("3_4717r")
+
+[sub_resource type="TileSet" id="TileSet_h5o24"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetScenesCollectionSource_4717r")
 
 [node name="world" type="Node2D"]
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1191.0
+offset_top = -65.99999
+offset_right = 2215.0
+offset_bottom = 1470.0
+rotation = 1.5707964
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_tcf2h")
+
 [node name="player" parent="." instance=ExtResource("1_6xmxd")]
-position = Vector2(108, 83)
+position = Vector2(15, 15)
 
-[node name="key" parent="." instance=ExtResource("2_tcf2h")]
-position = Vector2(792, 230)
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-1, 0)
+tile_set = SubResource("TileSet_h5o24")
 
-[node name="chest" parent="." instance=ExtResource("3_4717r")]
-position = Vector2(291, 522)
-
-[node name="door" parent="." instance=ExtResource("4_h5o24")]
-position = Vector2(981, 127)
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h5o24")
+autoplay = true
+parameters/looping = true
