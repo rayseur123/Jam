@@ -1,23 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1kwevjyrnxmt"]
+[gd_scene load_steps=6 format=3 uid="uid://b1kwevjyrnxmt"]
 
 [ext_resource type="Script" uid="uid://yx3vaxqy57xb" path="res://chest/chest.gd" id="1_3eoae"]
 [ext_resource type="Texture2D" uid="uid://dc3n1w0284mq2" path="res://assets/chest.png" id="1_twpm2"]
 [ext_resource type="Script" uid="uid://cubjuywuxh77" path="res://chest/detection.gd" id="3_08cju"]
-[ext_resource type="Texture2D" uid="uid://dvr58p5jasi0y" path="res://assets/opened_chest.jpg" id="3_611wj"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_f8nml"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_twpm2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_611wj")
-}],
-"loop": true,
-"name": &"chest",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3eoae"]
 size = Vector2(227, 225)
@@ -28,11 +13,8 @@ size = Vector2(320, 308)
 [node name="chest" type="StaticBody2D"]
 script = ExtResource("1_3eoae")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.5, 0.5000001)
-scale = Vector2(1.0088888, 1.0000001)
-sprite_frames = SubResource("SpriteFrames_f8nml")
-animation = &"chest"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_twpm2")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://debprahfmmn1a"]
+[gd_scene load_steps=5 format=3 uid="uid://debprahfmmn1a"]
 
 [ext_resource type="PackedScene" uid="uid://xton506cwm8p" path="res://player/player.tscn" id="1_6xmxd"]
 [ext_resource type="PackedScene" uid="uid://b6w7h3e4v3kxc" path="res://key/key.tscn" id="2_tcf2h"]
 [ext_resource type="PackedScene" uid="uid://b1kwevjyrnxmt" path="res://chest/chest.tscn" id="3_4717r"]
+[ext_resource type="PackedScene" uid="uid://c3hm5qf8sqy12" path="res://door/door.tscn" id="4_h5o24"]
 
 [node name="world" type="Node2D"]
 
@@ -13,4 +14,7 @@ position = Vector2(108, 83)
 position = Vector2(792, 230)
 
 [node name="chest" parent="." instance=ExtResource("3_4717r")]
-position = Vector2(137, 518)
+position = Vector2(291, 522)
+
+[node name="door" parent="." instance=ExtResource("4_h5o24")]
+position = Vector2(981, 127)
