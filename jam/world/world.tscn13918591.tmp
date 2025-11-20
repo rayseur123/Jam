@@ -1,12 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://debprahfmmn1a"]
+[gd_scene load_steps=7 format=3 uid="uid://debprahfmmn1a"]
 
 [ext_resource type="PackedScene" uid="uid://xton506cwm8p" path="res://player/player.tscn" id="1_6xmxd"]
 [ext_resource type="Texture2D" uid="uid://bxao7xerwyqm5" path="res://materials/magma.png" id="2_tcf2h"]
 [ext_resource type="PackedScene" uid="uid://c7h8g3xssfopp" path="res://platforme/platforme_basic.tscn" id="3_4717r"]
 [ext_resource type="AudioStream" uid="uid://ccli5ksajycao" path="res://world/musique.mp3" id="4_h5o24"]
-[ext_resource type="PackedScene" uid="uid://c3hm5qf8sqy12" path="res://door/door.tscn" id="5_sc4t8"]
-[ext_resource type="PackedScene" uid="uid://b6w7h3e4v3kxc" path="res://key/key.tscn" id="6_ai45w"]
-[ext_resource type="PackedScene" uid="uid://b1kwevjyrnxmt" path="res://chest/chest.tscn" id="7_4papg"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_4717r"]
 resource_name = "platform"
@@ -38,12 +35,3 @@ tile_set = SubResource("TileSet_h5o24")
 stream = ExtResource("4_h5o24")
 autoplay = true
 parameters/looping = true
-
-[node name="door" parent="." instance=ExtResource("5_sc4t8")]
-position = Vector2(1095, 114)
-
-[node name="key" parent="." instance=ExtResource("6_ai45w")]
-position = Vector2(187, 552)
-
-[node name="chest" parent="." instance=ExtResource("7_4papg")]
-position = Vector2(734, 449)

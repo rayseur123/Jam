@@ -19,8 +19,7 @@ func _move() -> void:
 		direction.x += 1
 	elif Input.is_action_just_pressed("left"):
 		direction.x -= 1
-
-	velocity = direction.normalized() * SPEED
+	global_position += direction.normalized() * tile_size
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
