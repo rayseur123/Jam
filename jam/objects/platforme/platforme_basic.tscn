@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7h8g3xssfopp"]
+[gd_scene load_steps=4 format=3 uid="uid://c7h8g3xssfopp"]
 
-[ext_resource type="Texture2D" uid="uid://27s2y16r5o6" path="res://objects/platforme/platforme1.png" id="1_dohse"]
+[ext_resource type="Script" uid="uid://c45atnja7qq3l" path="res://platforme/platforme_basic.gd" id="1_267tt"]
+[ext_resource type="Texture2D" uid="uid://27s2y16r5o6" path="res://platforme/platforme1.png" id="1_dohse"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_267tt"]
 size = Vector2(32, 32)
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="StaticBody2D" type="Area2D"]
+script = ExtResource("1_267tt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -13,3 +15,5 @@ texture = ExtResource("1_dohse")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_267tt")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
