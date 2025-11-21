@@ -1,9 +1,16 @@
-extends Node2D
+extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$chest.connect("use_key", $HUD.no_key)
-	$key.connect("key_collected", $HUD.have_key)
+	pass
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func have_key():
+	$s_key.frame = 1
+
+func no_key():
+	$s_key.visible = 0
+	$s_coin.visible = 1	
