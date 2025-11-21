@@ -36,3 +36,9 @@ func _move() -> void:
 
 func _on_move_finished():
 	is_moving = false
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("door") && Global.gain > 0:
+		get_tree().change_scene_to_file("res://menu/stats/menu_stats.tscn")
+		Global.world += 1
+		Global.new_world()

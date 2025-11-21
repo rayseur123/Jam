@@ -4,6 +4,7 @@ var key = 0
 var money = 0
 var tiles = 0
 var gain = 0
+var world = 1
 
 
 func	new_world():
