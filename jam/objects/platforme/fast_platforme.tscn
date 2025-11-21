@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5kbbtr6daq41"]
+
+[ext_resource type="Script" uid="uid://cbj486md678jo" path="res://objects/platforme/fast_platforme.gd" id="1_45du0"]
+[ext_resource type="Texture2D" uid="uid://bub38yc2s2bnj" path="res://objects/platforme/fast_platforme.png" id="1_mek8q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45du0"]
+size = Vector2(32, 32)
+
+[node name="fast_platforme" type="Area2D"]
+script = ExtResource("1_45du0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_mek8q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_45du0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

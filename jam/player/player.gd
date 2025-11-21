@@ -2,15 +2,16 @@ extends CharacterBody2D
 
 const tile_size = 32
 
-var is_moving: bool = false
+var is_moving = false
+var sprite_node: Tween
 
 func _physics_process(delta: float) -> void:
 	_move()
-	move_and_slide()
 
 func _move() -> void:
+	if is_moving:
+		return
 	var direction = Vector2.ZERO
-
 	if Input.is_action_just_pressed("up"):
 		direction.y -= 1
 	elif Input.is_action_just_pressed("down"):
@@ -19,10 +20,19 @@ func _move() -> void:
 		direction.x += 1
 	elif Input.is_action_just_pressed("left"):
 		direction.x -= 1
-	global_position += direction.normalized() * tile_size
+
+	if direction == Vector2.ZERO:
+		return
+	is_moving = true
+	global_position += direction * tile_size
+	$Sprite2D.global_position -= direction * tile_size
+	if sprite_node:
+		sprite_node.kill()
+	sprite_node = create_tween()
+	sprite_node.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+	sprite_node.tween_property($Sprite2D, "global_position", global_position, 0.185).set_trans(Tween.TRANS_SINE)
+	sprite_node.finished.connect(_on_move_finished)
 
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("door") && Global.gain > 0:
-		get_tree().change_scene_to_file("res://menu/stats/menu_stats.tscn")
-		Global.new_world()
+func _on_move_finished():
+	is_moving = false
