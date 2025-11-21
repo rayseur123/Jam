@@ -13,4 +13,4 @@ func have_key():
 
 func no_key():
 	$s_key.visible = 0
-	$s_coin.visible = 1	
+	$s_coin.visible = 1

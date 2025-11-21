@@ -13,7 +13,7 @@ func _move() -> void:
 	if is_moving:
 		return
 	if !on_platforme:
-		print("joueur mort")
+		get_tree().change_scene_to_file("res://menu/over/game_over.tscn")
 	var direction = Vector2.ZERO
 	if Input.is_action_just_pressed("up"):
 		direction.y -= 1
