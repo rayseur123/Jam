@@ -20,7 +20,7 @@ func _move() -> void:
 		direction.x += 1
 	elif Input.is_action_just_pressed("left"):
 		direction.x -= 1
-
+	move_and_slide()
 	if direction == Vector2.ZERO:
 		return
 	is_moving = true

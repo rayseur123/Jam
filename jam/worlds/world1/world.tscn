@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://debprahfmmn1a"]
+[gd_scene load_steps=12 format=4 uid="uid://c6lcuvohceu8s"]
 
 [ext_resource type="Script" uid="uid://d1qs0actfur8j" path="res://worlds/world1/world.gd" id="1_oeeir"]
 [ext_resource type="Texture2D" uid="uid://bxao7xerwyqm5" path="res://assets/materials/magma.png" id="2_kqyvp"]
