@@ -1,0 +1,54 @@
+[gd_scene load_steps=12 format=3 uid="uid://debprahfmmn1a"]
+
+[ext_resource type="Script" uid="uid://d1qs0actfur8j" path="res://worlds/world1/world1.gd" id="1_oeeir"]
+[ext_resource type="Texture2D" uid="uid://bxao7xerwyqm5" path="res://assets/materials/magma.png" id="2_kqyvp"]
+[ext_resource type="PackedScene" uid="uid://xton506cwm8p" path="res://player/player.tscn" id="3_jgfcd"]
+[ext_resource type="PackedScene" uid="uid://c7h8g3xssfopp" path="res://objects/platforme/platforme_basic.tscn" id="4_8okyn"]
+[ext_resource type="AudioStream" uid="uid://ccli5ksajycao" path="res://worlds/world1/musique.mp3" id="5_xlxhu"]
+[ext_resource type="PackedScene" uid="uid://c3hm5qf8sqy12" path="res://objects/door/door.tscn" id="6_05ifw"]
+[ext_resource type="PackedScene" uid="uid://b6w7h3e4v3kxc" path="res://objects/key/key.tscn" id="7_2ihrp"]
+[ext_resource type="PackedScene" uid="uid://b1kwevjyrnxmt" path="res://objects/chest/chest.tscn" id="8_friuq"]
+[ext_resource type="PackedScene" uid="uid://cg5n8r82nls0o" path="res://HUD/hud.tscn" id="9_bgnx5"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_4717r"]
+resource_name = "platform"
+scenes/1/scene = ExtResource("4_8okyn")
+
+[sub_resource type="TileSet" id="TileSet_h5o24"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetScenesCollectionSource_4717r")
+
+[node name="world1" type="Node2D"]
+script = ExtResource("1_oeeir")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1193.0
+offset_top = -57.000008
+offset_right = 2217.0
+offset_bottom = 1479.0
+rotation = 1.5707964
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_kqyvp")
+
+[node name="player" parent="." instance=ExtResource("3_jgfcd")]
+position = Vector2(143, 158)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-1, 0)
+tile_set = SubResource("TileSet_h5o24")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xlxhu")
+autoplay = true
+parameters/looping = true
+
+[node name="door" parent="." instance=ExtResource("6_05ifw")]
+position = Vector2(1095, 114)
+
+[node name="key" parent="." instance=ExtResource("7_2ihrp")]
+position = Vector2(187, 552)
+
+[node name="chest" parent="." instance=ExtResource("8_friuq")]
+position = Vector2(612, 443)
+
+[node name="HUD" parent="." instance=ExtResource("9_bgnx5")]

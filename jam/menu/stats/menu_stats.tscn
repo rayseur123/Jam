@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://dedr3tij0rj6q"]
+
+[ext_resource type="Script" uid="uid://bnqvokghdlp11" path="res://menu/stats/menu_stats.gd" id="1_jgkg6"]
+[ext_resource type="Script" uid="uid://jv16lbt33fuo" path="res://menu/stats/button.gd" id="2_j4041"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nmaoc"]
+
+[node name="Menu_Stats" type="CanvasLayer"]
+script = ExtResource("1_jgkg6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.11119685, 0.11119684, 0.11119684, 1)
+position = Vector2(576.25, 324.25003)
+scale = Vector2(1153.5, 649.50006)
+texture = SubResource("CanvasTexture_nmaoc")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Titre" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 18.0
+offset_right = 524.0
+offset_bottom = 62.0
+scale = Vector2(2.7186255, 2.669803)
+text = "Stats de la game"
+
+[node name="Gain" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 121.0
+offset_right = 196.0
+offset_bottom = 144.0
+scale = Vector2(4.2436714, 4.0772667)
+text = "Gain :"
+
+[node name="gain_val" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 122.0
+offset_right = 474.0
+offset_bottom = 145.0
+scale = Vector2(4.2436714, 4.0772667)
+text = "0"
+
+[node name="Time" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 276.0
+offset_right = 199.0
+offset_bottom = 325.0
+scale = Vector2(4.2436714, 4.0772667)
+text = "Time :
+"
+
+[node name="time_val" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 279.00003
+offset_right = 420.0
+offset_bottom = 302.00003
+scale = Vector2(4.2436714, 4.0772667)
+text = "0"
+
+[node name="Button" type="Button" parent="Control"]
+modulate = Color(1, 0.15932342, 0.5574204, 1)
+layout_mode = 0
+offset_left = 431.0
+offset_top = 430.0
+offset_right = 758.0
+offset_bottom = 555.0
+text = "Next"
+script = ExtResource("2_j4041")
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

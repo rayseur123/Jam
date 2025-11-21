@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1kwevjyrnxmt"]
+
+[ext_resource type="Script" uid="uid://yx3vaxqy57xb" path="res://objects/chest/chest.gd" id="1_3eoae"]
+[ext_resource type="Texture2D" uid="uid://ddvcid71qk8is" path="res://assets/items and trap_animation/chest/chest_3.png" id="2_611wj"]
+[ext_resource type="Script" uid="uid://cubjuywuxh77" path="res://objects/chest/detection.gd" id="3_08cju"]
+[ext_resource type="Texture2D" uid="uid://swfs70bpnndk" path="res://assets/items and trap_animation/chest/chest_open_3.png" id="3_f8nml"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8nml"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_611wj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f8nml")
+}],
+"loop": true,
+"name": &"chest",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3eoae"]
+size = Vector2(227, 225)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_611wj"]
+size = Vector2(320, 308)
+
+[node name="chest" type="StaticBody2D"]
+script = ExtResource("1_3eoae")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.35722303, -1.6249876)
+scale = Vector2(15.955346, 16.296875)
+sprite_frames = SubResource("SpriteFrames_f8nml")
+animation = &"chest"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_3eoae")
+
+[node name="Detection" type="Area2D" parent="." groups=["chest"]]
+script = ExtResource("3_08cju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" groups=["chest"]]
+position = Vector2(3, -2)
+shape = SubResource("RectangleShape2D_611wj")
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
