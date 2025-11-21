@@ -11,13 +11,13 @@ size = Vector2(106, 1)
 
 [node name="door" type="StaticBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -24)
-shape = SubResource("RectangleShape2D_1xxlg")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_rdd60")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -24)
+shape = SubResource("RectangleShape2D_1xxlg")
 
 [node name="detection" type="Area2D" parent="." groups=["door"]]
 script = ExtResource("2_08xnr")

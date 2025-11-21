@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://xton506cwm8p"]
+[gd_scene load_steps=6 format=3 uid="uid://xton506cwm8p"]
 
 [ext_resource type="Script" uid="uid://dxcibgt7aylil" path="res://player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://tiup2qvwyaox" path="res://player/player.png" id="2_rkbax"]
@@ -8,6 +8,9 @@ size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
 size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rkbax"]
+radius = 98.02041
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.5, 0.5)
@@ -25,5 +28,14 @@ shape = SubResource("RectangleShape2D_4flbx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_rkbax")
 
+[node name="render_distance" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="render_distance"]
+shape = SubResource("CircleShape2D_rkbax")
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="render_distance" to="." method="_on_render_distance_area_entered"]
+[connection signal="area_exited" from="render_distance" to="." method="_on_render_distance_area_exited"]
+[connection signal="area_shape_entered" from="render_distance" to="." method="_on_render_distance_area_shape_entered"]
+[connection signal="body_exited" from="render_distance" to="." method="_on_render_distance_body_exited"]

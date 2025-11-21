@@ -50,3 +50,19 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.is_in_group("platforme"):
 		on_platforme = 0
+
+func _on_render_distance_body_entered(body: Node2D) -> void:
+	if body.has_node("Sprite2D"):
+		body.get_node("Sprite2D").visible = true
+
+func _on_render_distance_body_exited(body: Node2D) -> void:
+	if body.has_node("Sprite2D"):
+		body.get_node("Sprite2D").visible = false
+
+func _on_render_distance_area_entered(area: Area2D) -> void:
+	if area.has_node("Sprite2D"):
+		area.get_node("Sprite2D").visible = true
+
+func _on_render_distance_area_exited(area: Area2D) -> void:
+	if area.has_node("Sprite2D"):
+		area.get_node("Sprite2D").visible = false
