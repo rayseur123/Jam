@@ -31,7 +31,7 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_kqyvp")
 
 [node name="player" parent="." instance=ExtResource("3_jgfcd")]
-position = Vector2(143, 158)
+position = Vector2(181, 342)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-1, 0)
@@ -43,12 +43,12 @@ autoplay = true
 parameters/looping = true
 
 [node name="door" parent="." instance=ExtResource("6_05ifw")]
-position = Vector2(1095, 114)
+position = Vector2(49, 325)
 
 [node name="key" parent="." instance=ExtResource("7_2ihrp")]
-position = Vector2(187, 552)
+position = Vector2(117, 538)
 
 [node name="chest" parent="." instance=ExtResource("8_friuq")]
-position = Vector2(612, 443)
+position = Vector2(419, 312)
 
 [node name="HUD" parent="." instance=ExtResource("9_bgnx5")]
