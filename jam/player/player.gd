@@ -15,8 +15,7 @@ func _move() -> void:
 		return
 	if !on_platforme:
 		emit_signal("lose_heart")
-		if (Global.heart == 0):
-			get_tree().change_scene_to_file("res://menu/over/game_over.tscn")
+		get_tree().change_scene_to_file("res://worlds/world" + str(Global.world) + "/world.tscn")
 	var direction = Vector2.ZERO
 	if Input.is_action_just_pressed("up"):
 		direction.y -= 1
@@ -25,10 +24,7 @@ func _move() -> void:
 	elif Input.is_action_just_pressed("right"):
 		direction.x += 1
 	elif Input.is_action_just_pressed("left"):
-		direction.x -= 1
-	elif Input.is_action_just_pressed("kill"):
-		emit_signal("lose_heart")
-		get_tree().change_scene_to_file("res://worlds/world" + str(Global.world) + "/world.tscn")
+		direction.x -= 1		
 	move_and_slide()
 	if direction == Vector2.ZERO:
 		return
