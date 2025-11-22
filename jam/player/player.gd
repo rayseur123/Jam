@@ -5,6 +5,7 @@ const tile_size = 32
 var is_moving = false
 var sprite_node: Tween
 var on_platforme = 1
+signal lose_heart
 
 func _physics_process(_delta: float) -> void:
 	_move()
@@ -13,7 +14,9 @@ func _move() -> void:
 	if is_moving:
 		return
 	if !on_platforme:
-		get_tree().change_scene_to_file("res://menu/over/game_over.tscn")
+		emit_signal("lose_heart")
+		if (Global.heart == 0):
+			get_tree().change_scene_to_file("res://menu/over/game_over.tscn")
 	var direction = Vector2.ZERO
 	if Input.is_action_just_pressed("up"):
 		direction.y -= 1
@@ -23,6 +26,9 @@ func _move() -> void:
 		direction.x += 1
 	elif Input.is_action_just_pressed("left"):
 		direction.x -= 1
+	elif Input.is_action_just_pressed("kill"):
+		emit_signal("lose_heart")
+		get_tree().change_scene_to_file("res://worlds/world" + str(Global.world) + "/world.tscn")
 	move_and_slide()
 	if direction == Vector2.ZERO:
 		return
