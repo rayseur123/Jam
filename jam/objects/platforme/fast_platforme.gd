@@ -33,7 +33,6 @@ func _on_body_exited(body: Node2D) -> void:
 func start_disappear():
 	if collision.disabled:
 		return
-	collision.disabled = true
 	var tween = create_tween()
 	tween.tween_property(sprite, "modulate:a", 0.0, 0.5)
 	tween.finished.connect(queue_free)

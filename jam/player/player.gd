@@ -17,15 +17,14 @@ func _move() -> void:
 		emit_signal("lose_heart")
 		get_tree().change_scene_to_file("res://worlds/world" + str(Global.world) + "/world.tscn")
 	var direction = Vector2.ZERO
-	if Input.is_action_just_pressed("up"):
+	if Input.is_action_just_pressed("up") and !$up.is_colliding():
 		direction.y -= 1
-	elif Input.is_action_just_pressed("down"):
+	elif Input.is_action_just_pressed("down") and !$down.is_colliding():
 		direction.y += 1
-	elif Input.is_action_just_pressed("right"):
+	elif Input.is_action_just_pressed("right") and !$right.is_colliding():
 		direction.x += 1
-	elif Input.is_action_just_pressed("left"):
+	elif Input.is_action_just_pressed("left") and !$left.is_colliding():
 		direction.x -= 1		
-	move_and_slide()
 	if direction == Vector2.ZERO:
 		return
 	is_moving = true
