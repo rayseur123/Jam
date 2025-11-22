@@ -5,6 +5,9 @@ const TIME_TO_DESTROY = 1.0
 var is_here = 0
 var time_player_enter = 0.0
 
+@onready var sprite = $Sprite2D
+@onready var collision = $CollisionShape2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -14,7 +17,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if is_here:
 		if  (((Time.get_ticks_msec() / 1000.0) - time_player_enter) >= TIME_TO_DESTROY):
-			queue_free()
+			start_disappear()
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -25,4 +28,12 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		queue_free()
+		start_disappear()
+
+func start_disappear():
+	if collision.disabled:
+		return
+	collision.disabled = true
+	var tween = create_tween()
+	tween.tween_property(sprite, "modulate:a", 0.0, 0.5)
+	tween.finished.connect(queue_free)
