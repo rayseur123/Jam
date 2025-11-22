@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://xton506cwm8p"]
+[gd_scene load_steps=6 format=3 uid="uid://xton506cwm8p"]
 
 [ext_resource type="Script" uid="uid://dxcibgt7aylil" path="res://player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://tiup2qvwyaox" path="res://player/player.png" id="2_rkbax"]
+[ext_resource type="AudioStream" uid="uid://biobrnddwbf48" path="res://player/moove.mp3" id="3_g1dw6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
 size = Vector2(32, 32)
@@ -44,6 +45,10 @@ hit_from_inside = true
 position = Vector2(17, 0)
 target_position = Vector2(16, 0)
 hit_from_inside = true
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_g1dw6")
+volume_db = -25.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

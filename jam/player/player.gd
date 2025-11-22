@@ -27,6 +27,7 @@ func _move() -> void:
 		direction.x -= 1		
 	if direction == Vector2.ZERO:
 		return
+	$sound.play()
 	is_moving = true
 	global_position += direction * tile_size
 	$Sprite2D.global_position -= direction * tile_size

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b47v6rr23msky"
+path="res://.godot/imported/volcan 2.mp3-b6177b76c01ef8d194c5e5d31df16a20.mp3str"
+
+[deps]
+
+source_file="res://worlds/world1/volcan 2.mp3"
+dest_files=["res://.godot/imported/volcan 2.mp3-b6177b76c01ef8d194c5e5d31df16a20.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
