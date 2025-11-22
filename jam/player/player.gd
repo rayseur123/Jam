@@ -52,3 +52,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		Global.new_world()
 	if area.is_in_group("platforme"):
 		on_platforme = 1
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area.is_in_group("platforme"):
+		on_platforme = 0
