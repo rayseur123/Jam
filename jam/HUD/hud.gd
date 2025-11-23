@@ -10,6 +10,7 @@ func _process(_delta: float) -> void:
 
 func have_key():
 	$s_key.frame = 1
+	$key_sound.play()
 
 func no_key():
 	$s_key.frame = 0
@@ -17,6 +18,7 @@ func no_key():
 func get_money():
 	$s_key.visible = 0
 	$s_coin.visible = 1
+	$coin_sound.play()
 
 func lose_heart():
 	get_node("heart" + str(Global.heart)).modulate = Color(0.065, 0.065, 0.065, 1.0)
