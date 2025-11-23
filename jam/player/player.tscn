@@ -1,8 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://xton506cwm8p"]
+[gd_scene load_steps=8 format=3 uid="uid://xton506cwm8p"]
 
 [ext_resource type="Script" uid="uid://dxcibgt7aylil" path="res://player/player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://tiup2qvwyaox" path="res://player/player.png" id="2_rkbax"]
+[ext_resource type="Texture2D" uid="uid://bs6v3w1qlf27u" path="res://player/face.png" id="2_yw30f"]
 [ext_resource type="AudioStream" uid="uid://biobrnddwbf48" path="res://player/moove.mp3" id="3_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://dd1d76ndjom2c" path="res://player/back.png" id="3_qjkh3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g6k8r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yw30f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qjkh3")
+}],
+"loop": true,
+"name": &"face",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
 size = Vector2(32, 32)
@@ -14,9 +29,10 @@ size = Vector2(32, 32)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_onrkg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_rkbax")
+sprite_frames = SubResource("SpriteFrames_g6k8r")
+animation = &"face"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4flbx")
