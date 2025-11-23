@@ -1,8 +1,9 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://df0mhas8cbfhw"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://df0mhas8cbfhw"]
 
 [ext_resource type="PackedScene" uid="uid://c7h8g3xssfopp" path="res://objects/platforme/platforme_basic.tscn" id="1_14fb3"]
 [ext_resource type="PackedScene" uid="uid://c5kbbtr6daq41" path="res://objects/platforme/fast_platforme.tscn" id="2_p0366"]
 [ext_resource type="Texture2D" uid="uid://mdn7kl41ovpb" path="res://objects/wall/wall.png" id="3_hobn4"]
+[ext_resource type="Texture2D" uid="uid://dyvcub2b0d8e6" path="res://assets/new_wall.png" id="4_p0366"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mjrc7"]
 resource_name = "platform"
@@ -18,9 +19,16 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hobn4"]
+texture = ExtResource("4_p0366")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
 [resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetScenesCollectionSource_mjrc7")
 sources/1 = SubResource("TileSetScenesCollectionSource_7y6if")
 sources/3 = SubResource("TileSetAtlasSource_k61v0")
+sources/7 = SubResource("TileSetAtlasSource_hobn4")
