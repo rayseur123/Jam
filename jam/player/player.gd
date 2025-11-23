@@ -47,9 +47,12 @@ func _on_move_finished():
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("door") && Global.gain > 0:
-		get_tree().change_scene_to_file("res://menu/stats/menu_stats.tscn")
-		Global.world += 1
-		Global.new_world()
+		if(Global.world == Global.last_world):
+			get_tree().change_scene_to_file("res://menu/credit/credit.tscn")
+		else:
+			get_tree().change_scene_to_file("res://menu/stats/menu_stats.tscn")
+			Global.world += 1
+			Global.new_world()
 	if area.is_in_group("platforme"):
 		on_platforme = 1
 

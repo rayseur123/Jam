@@ -6,6 +6,7 @@ var tiles = 0
 var gain = 0
 var world = 1
 var heart = 3
+var last_world = 4
 
 func	new_world():
 	key = 0

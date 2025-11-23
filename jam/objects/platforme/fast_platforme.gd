@@ -1,6 +1,6 @@
 extends Area2D
 
-const TIME_TO_DESTROY = 1.0
+const TIME_TO_DESTROY = 0.5
 
 var is_here = 0
 var time_player_enter = 0.0

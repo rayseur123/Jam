@@ -23,7 +23,7 @@ animations = [{
 size = Vector2(160, 134.99998)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_611wj"]
-size = Vector2(32, 27)
+size = Vector2(36, 27)
 
 [node name="chest" type="StaticBody2D"]
 script = ExtResource("1_3eoae")
