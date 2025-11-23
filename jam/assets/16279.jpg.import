@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0y4akrqsllae"
-path="res://.godot/imported/button_start-removebg-preview (2) (1).png-fbe5e0e99e3510785f436deadc92b144.ctex"
+uid="uid://73clmj5k2djn"
+path="res://.godot/imported/16279.jpg-e861f7d27726b7765c8fa1914dfab7e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/materials/button_start-removebg-preview (2) (1).png"
-dest_files=["res://.godot/imported/button_start-removebg-preview (2) (1).png-fbe5e0e99e3510785f436deadc92b144.ctex"]
+source_file="res://assets/16279.jpg"
+dest_files=["res://.godot/imported/16279.jpg-e861f7d27726b7765c8fa1914dfab7e3.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxao7xerwyqm5"
-path="res://.godot/imported/magma.png-16f4281710d023859027f256e665e2ea.ctex"
+uid="uid://hyd73jweko4u"
+path="res://.godot/imported/button_start.png-85712e6478b27699452c03f90341a578.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/materials/magma.png"
-dest_files=["res://.godot/imported/magma.png-16f4281710d023859027f256e665e2ea.ctex"]
+source_file="res://assets/button_start.png"
+dest_files=["res://.godot/imported/button_start.png-85712e6478b27699452c03f90341a578.ctex"]
 
 [params]
 

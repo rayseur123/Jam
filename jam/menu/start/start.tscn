@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dddvq1gkyulsk"]
+[gd_scene load_steps=6 format=3 uid="uid://dddvq1gkyulsk"]
 
 [ext_resource type="Texture2D" uid="uid://brafbui8dtlb7" path="res://assets/e94d489f-2ce7-4a92-8e66-166f008331ae.png" id="1_ixo2b"]
-[ext_resource type="Texture2D" uid="uid://bca068ukxfqk2" path="res://assets/materials/button_start-removebg-preview (1).png" id="2_ixo2b"]
-[ext_resource type="Texture2D" uid="uid://n8cuudga8shp" path="res://assets/materials/ChatGPT_Image_23_nov._2025__18_11_51-removebg-preview (1).png" id="3_h74lp"]
+[ext_resource type="Texture2D" uid="uid://bca068ukxfqk2" path="res://assets/button_start-removebg-preview (1).png" id="2_ixo2b"]
+[ext_resource type="Texture2D" uid="uid://n8cuudga8shp" path="res://assets/ChatGPT_Image_23_nov._2025__18_11_51-removebg-preview (1).png" id="3_h74lp"]
 [ext_resource type="Script" uid="uid://dq7523ymdx1dv" path="res://menu/start/texture_button.gd" id="3_ixo2b"]
+[ext_resource type="Texture2D" uid="uid://bs6v3w1qlf27u" path="res://player/face.png" id="5_bscps"]
 
 [node name="Start" type="Node2D"]
 
@@ -20,5 +21,11 @@ offset_bottom = 584.0
 texture_normal = ExtResource("2_ixo2b")
 texture_hover = ExtResource("3_h74lp")
 script = ExtResource("3_ixo2b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(585.99994, 339)
+scale = Vector2(2.656251, 2.7998047)
+texture = ExtResource("5_bscps")
 
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
