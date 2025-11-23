@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dddvq1gkyulsk"]
+
+[ext_resource type="Texture2D" uid="uid://brafbui8dtlb7" path="res://assets/e94d489f-2ce7-4a92-8e66-166f008331ae.png" id="1_ixo2b"]
+[ext_resource type="Texture2D" uid="uid://bca068ukxfqk2" path="res://assets/materials/button_start-removebg-preview (1).png" id="2_ixo2b"]
+[ext_resource type="Texture2D" uid="uid://n8cuudga8shp" path="res://assets/materials/ChatGPT_Image_23_nov._2025__18_11_51-removebg-preview (1).png" id="3_h74lp"]
+[ext_resource type="Script" uid="uid://dq7523ymdx1dv" path="res://menu/start/texture_button.gd" id="3_ixo2b"]
+
+[node name="Start" type="Node2D"]
+
+[node name="wallpaper" type="Sprite2D" parent="."]
+position = Vector2(720, 441)
+scale = Vector2(0.957845, 0.9102173)
+texture = ExtResource("1_ixo2b")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 459.0
+offset_top = 475.0
+offset_right = 715.0
+offset_bottom = 584.0
+texture_normal = ExtResource("2_ixo2b")
+texture_hover = ExtResource("3_h74lp")
+script = ExtResource("3_ixo2b")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

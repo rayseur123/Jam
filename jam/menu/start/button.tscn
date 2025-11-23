@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://nji83qq7be2v"]
+
+[ext_resource type="Texture2D" uid="uid://cvhubbrf8cdhu" path="res://assets/materials/button_start-removebg-preview.png" id="1_olp1u"]
+
+[node name="Button" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 433.0
+offset_top = 258.0
+offset_right = 701.0
+offset_bottom = 369.0
+
+[node name="ButtonStartRemovebgPreview" type="Sprite2D" parent="."]
+position = Vector2(573, 316)
+scale = Vector2(1.0539216, 1)
+texture = ExtResource("1_olp1u")

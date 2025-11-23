@@ -10,6 +10,7 @@ var heart = 3
 func	new_world():
 	key = 0
 	tiles = 0
+	gain = 0
 	
 func reload_scene():
 	key = 0
