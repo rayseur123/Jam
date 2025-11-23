@@ -8,6 +8,5 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-
-func _on_button_pressed() -> void:
+func _on_texture_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://worlds/world" + str(Global.world) + "/world.tscn")
